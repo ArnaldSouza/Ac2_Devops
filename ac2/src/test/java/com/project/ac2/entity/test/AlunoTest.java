@@ -25,9 +25,6 @@ public class AlunoTest {
         assertThrows(IllegalArgumentException.class, () -> {
             new Cpf("invalid-cpf");
         });
-    }
-
-	
-	
+    }	
 
 }
