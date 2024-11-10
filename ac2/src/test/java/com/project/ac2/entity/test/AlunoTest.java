@@ -8,7 +8,7 @@ import com.project.ac2.entity.Aluno;
 import com.project.ac2.entity.Cpf;
 import com.project.ac2.entity.Media;
 
-public class AlunoTest {
+public class AlunoTest {	
 	
 	
 	@Test
@@ -19,6 +19,14 @@ public class AlunoTest {
         
         assertEquals(cpf, aluno.getCpf());
     }
+	
+	@Test
+    void testInvalidCpfThrowsException() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Cpf("invalid-cpf");
+        });
+    }
+
 	
 	
 
