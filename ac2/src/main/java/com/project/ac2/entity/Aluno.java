@@ -12,12 +12,12 @@ import lombok.Data;
 @Data
 @Table(name = "tb_aluno")
 public class Aluno {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)  
-    private Long id;    
-    
-    public Long getId() {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
+	public Long getId() {
         return id;
     }
 
@@ -57,5 +57,4 @@ public class Aluno {
     public void setMedia(Media media) {
         this.media = media;
     }
-    
 }

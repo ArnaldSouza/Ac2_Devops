@@ -1,4 +1,5 @@
 package com.project.ac2.entity.test;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -8,8 +9,7 @@ import com.project.ac2.entity.Aluno;
 import com.project.ac2.entity.Cpf;
 import com.project.ac2.entity.Media;
 
-public class AlunoTest {	
-	
+public class AlunoTest {
 	
 	@Test
     void testSetAndGetValidCpf() {
@@ -50,7 +50,4 @@ public class AlunoTest {
 	        new Media(-1.0); // Média fora do intervalo 0-10
 	    });
 	}
-
-	
-
 }

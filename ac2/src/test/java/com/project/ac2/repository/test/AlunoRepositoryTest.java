@@ -9,7 +9,7 @@ import java.util.Optional;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.boot.test.context.SpringBootTest;
+
 import org.springframework.test.context.ActiveProfiles;
 
 import com.project.ac2.entity.Aluno;
@@ -19,28 +19,28 @@ import com.project.ac2.repository.Aluno_Repository;
 
 @ActiveProfiles("test")
 @DataJpaTest
-public class AlunoRespositoryTest {
+public class AlunoRepositoryTest {
 	
 	@Autowired
 	private Aluno_Repository alunoRepository;
 	
 	@Test
-	public void testSaveandFindAluno(){
+	void testSaveAndFindAluno() {
 		
-		//cria um aluno com cpf e media válida
+		//criando um novo Aluno com cpf e média válida
 		Aluno aluno = new Aluno();
-		aluno.setnomeAluno("Aluno 1 test");
-		aluno.setCpf(new Cpf("485.235.548-15"));
-		aluno.setMedia(new Media(7.5));
+		aluno.setnomeAluno("Aluno");
+		aluno.setCpf(new Cpf("123.456.789-10"));
+		aluno.setMedia(new Media(8.5));
 		
-		//salva o objeto no banco de dados
-		Aluno alunoSalvo = alunoRepository.save(aluno);
-		assertNotNull(alunoSalvo.getId());
+		//salvando o usuário no banco de dados
+		Aluno savedAluno = alunoRepository.save(aluno);
+		assertNotNull(savedAluno.getId());
 		
-		//busca pelo aluno pelo ID
-		Optional<Aluno> alunoBd = alunoRepository.findById(alunoSalvo.getId());
-	    assertTrue(alunoBd.isPresent());
-	    assertEquals("Aluno 1 test", alunoBd.get().getnomeAluno());
-		
+		//buscando o usuário pelo ID
+		Optional<Aluno> alunoBD = alunoRepository.findById(savedAluno.getId());
+		assertTrue(alunoBD.isPresent());
+		assertEquals("Aluno", alunoBD.get().getnomeAluno());
 	}
+	
 }

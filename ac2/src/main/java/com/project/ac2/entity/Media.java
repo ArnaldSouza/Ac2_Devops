@@ -4,8 +4,8 @@ import java.util.Objects;
 import jakarta.persistence.Embeddable;
 import lombok.Data;
 
-
 @Embeddable
+@Data
 public class Media {
 
     private Double Aluno_media;
