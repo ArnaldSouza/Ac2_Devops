@@ -23,8 +23,34 @@ public class AlunoTest {
 	@Test
     void testInvalidCpfThrowsException() {
         assertThrows(IllegalArgumentException.class, () -> {
-            new Cpf("invalid-cpf");
+            new Cpf("123456789");
         });
-    }	
+    }
+	
+
+	@Test
+    void testSetAndGetMediaValida() {
+        Aluno al = new Aluno();
+        Media media = new Media(8.5);
+        al.setMedia(media);
+        
+        assertEquals(media, al.getMedia());
+    }
+	
+	@Test
+	void testMediaInvalidaThrowsException() {
+	    assertThrows(IllegalArgumentException.class, () -> {
+	        new Media(11.0); // Média fora do intervalo 0-10
+	    });
+	}
+	
+	@Test
+	void testMediaInvalidaThrowsException2() {
+	    assertThrows(IllegalArgumentException.class, () -> {
+	        new Media(-1.0); // Média fora do intervalo 0-10
+	    });
+	}
+
+	
 
 }

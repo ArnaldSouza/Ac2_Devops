@@ -1,5 +1,13 @@
 package com.project.ac2;
 
-public class Ac2ApplicationTests {
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class Ac2ApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
 
 }

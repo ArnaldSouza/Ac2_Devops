@@ -8,13 +8,12 @@ services:
       - db-volume:/var/lib/postgresql/data
 
   api:
-    image: arnald47/ac2
+    image: arnald47/ac2:latest
+    networks:
+      - default  # Certifique-se de que está usando a rede adequada
     environment:
-      SPRING_PROFILES_ACTIVE: prod
       DB_HOST: database
     ports:
-      - "8484:8484"
-    depends_on:
-      - database
+      - "8585:8080"
 volumes:
   db-volume:
